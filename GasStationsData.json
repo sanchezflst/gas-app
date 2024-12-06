@@ -1,0 +1,164 @@
+	
+type	"FeatureCollection"
+name	"gasolineras"
+crs	
+type	"name"
+properties	
+name	"urn:ogc:def:crs:EPSG::3857"
+features	
+0	
+type	"Feature"
+properties	
+id	1
+nombre	"Galp"
+telefono	"965 54 50 24"
+direccion	"N-340"
+geometry	
+type	"MultiPoint"
+coordinates	
+0	
+0	-52479.55290456797
+1	4676424.337716415
+1	
+type	"Feature"
+properties	
+id	2
+nombre	"Shell"
+telefono	"689 36 69 03"
+direccion	"Carrer Alacant, 62"
+geometry	
+type	"MultiPoint"
+coordinates	
+0	
+0	-53391.928600234896
+1	4677163.39916867
+2	
+type	"Feature"
+properties	
+id	4
+nombre	"Petromax Levante"
+telefono	null
+direccion	"Carrer Alacant, 58"
+geometry	
+type	"MultiPoint"
+coordinates	
+0	
+0	-53435.257161087466
+1	4677283.481180176
+3	
+type	"Feature"
+properties	
+id	5
+nombre	"Gasolinera Petronor Collao"
+telefono	"965 52 09 43"
+direccion	"Carrer Oliver, 72"
+geometry	
+type	"MultiPoint"
+coordinates	
+0	
+0	-54514.75730575714
+1	4677646.822111897
+4	
+type	"Feature"
+properties	
+id	7
+nombre	"Repsol"
+telefono	"965 33 66 30"
+direccion	"Av. Tirant lo Blanc, 0"
+geometry	
+type	"MultiPoint"
+coordinates	
+0	
+0	-52604.896241320865
+1	4680037.939691514
+5	
+type	"Feature"
+properties	
+id	8
+nombre	"Gas Express"
+telefono	"960 07 49 32"
+direccion	"Carrer València, 18"
+geometry	
+type	"MultiPoint"
+coordinates	
+0	
+0	-51904.521004113674
+1	4680448.632550451
+6	
+type	"Feature"
+properties	
+id	9
+nombre	"Repsol"
+telefono	"965 33 48 48"
+direccion	"Polígon Industrial Cotes Baixes"
+geometry	
+type	"MultiPoint"
+coordinates	
+0	
+0	-51499.08947042031
+1	4680854.683063584
+7	
+type	"Feature"
+properties	
+id	6
+nombre	"Gasolinera Alcoy 24H"
+telefono	"965 54 21 11"
+direccion	"Carrer Alacant, 1"
+geometry	
+type	"MultiPoint"
+coordinates	
+0	
+0	-53229.1370073174
+1	4678096.201185883
+8	
+type	"Feature"
+properties	
+id	10
+nombre	"Galp"
+telefono	"966 50 07 77"
+direccion	"Av. d'Alacant, 104"
+geometry	
+type	"MultiPoint"
+coordinates	
+0	
+0	-51564.39180141979
+1	4680954.957732987
+9	
+type	"Feature"
+properties	
+id	3
+nombre	"Másoil Alcoy"
+telefono	"965 59 95 50"
+direccion	"Carrer Alacant, 62"
+geometry	
+type	"MultiPoint"
+coordinates	
+0	
+0	-53390.690641353394
+1	4677220.345277219
+10	
+type	"Feature"
+properties	
+id	11
+nombre	"Galp"
+telefono	"965 54 29 06"
+direccion	"Partida Algars, 128"
+geometry	
+type	"MultiPoint"
+coordinates	
+0	
+0	-51624.123317452475
+1	4680999.833742442
+11	
+type	"Feature"
+properties	
+id	12
+nombre	"Plenoil"
+telefono	"915 687 497"
+direccion	"Carrer Alacant, 101"
+geometry	
+type	"MultiPoint"
+coordinates	
+0	
+0	-52422.730863567216
+1	4676437.436342013
