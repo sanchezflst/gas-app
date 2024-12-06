@@ -1,4 +1,6 @@
 {
+  "homepage": "https://sanchezflst.github.io/gas-app"
+
   "name": "final",
   "version": "0.1.0",
   "private": true,
@@ -18,10 +20,13 @@
     "xml2js": "^0.6.2"
   },
   "scripts": {
-    "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
-    "test": "react-app-rewired test",
-    "eject": "react-app-rewired eject"
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build",
+  "start": "react-scripts start",
+  "build": "react-scripts build",
+  "test": "react-scripts test",
+  "eject": "react-scripts eject"
+}
   },
   "eslintConfig": {
     "extends": [
