@@ -1,5 +1,5 @@
 {
-  "homepage": "https://sanchezflst.github.io/gas-app/src/App.js",
+  "homepage": "https://sanchezflst.github.io/gas-app",
   "name": "final",
   "version": "0.1.0",
   "private": true,
@@ -19,14 +19,12 @@
     "xml2js": "^0.6.2"
   },
   "scripts": {
-  "predeploy": "npm run build",
-  "deploy": "npm run deploy",
-  "start": "react-scripts start",
-  "build": "react-scripts build",
-  "test": "react-scripts test",
-  "eject": "react-scripts eject",
-  "deploy": "npm run deploy"
-}
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -47,6 +45,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^3.2.3",
     "react-app-rewired": "^2.2.1"
   }
 }
