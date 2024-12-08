@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import gasStationsData from './gasStationsData.json'; // Updated JSON file name
 
 // Haversine Formula to calculate the distance between two coordinates
 const haversineDistance = (lat1, lon1, lat2, lon2) => {
@@ -31,20 +30,31 @@ function App() {
   const [error, setError] = useState(null); // Error state
 
   useEffect(() => {
-    // Fetch gas station data from the provided URL (can be a proxy if CORS is an issue)
     const fetchData = async () => {
       try {
+        // Try fetching from the remote API (via a proxy)
         const response = await axios.get(
           "https://api.allorigins.win/get?url=" +
             encodeURIComponent(
               "https://opendata.alcoi.org/data/dataset/eaa35b18-783f-425f-be0d-e469188b487e/resource/fb583582-0a7b-4ae1-a515-dd01d094cf72/download/gasolineras.geojson"
             )
         );
+
+        // Parse the response to JSON
         const data = JSON.parse(response.data.contents);
         setGasStations(data.features);
       } catch (err) {
-        setError("Error loading gas stations. Falling back to local data.");
-        setGasStations(gasStationsData.features); // Use the imported local JSON as fallback
+        if (err.response && err.response.status === 403) {
+          // If the error is 403, try loading the local fallback JSON
+          try {
+            const response = await import("./gasStationsData.json");
+            setGasStations(response.features);
+          } catch (localError) {
+            setError("Error loading local gas station data.");
+          }
+        } else {
+          setError("Error loading gas stations.");
+        }
       }
       setLoading(false);
     };
@@ -103,18 +113,6 @@ function App() {
           <strong>Coordenadas:</strong>{" "}
           {station.geometry.coordinates[0][0]}, {station.geometry.coordinates[0][1]}
         </p>
-
-        {/* Display prices if available */}
-        {station.properties.precio && (
-          <>
-            <h4>Precios:</h4>
-            <ul>
-              <li><strong>Gasolina Normal:</strong> {station.properties.precio.gasolina_normal} EUR</li>
-              <li><strong>Gasolina Super:</strong> {station.properties.precio.gasolina_super} EUR</li>
-              <li><strong>Gasóleo:</strong> {station.properties.precio.gasoleo} EUR</li>
-            </ul>
-          </>
-        )}
       </div>
     );
   };
@@ -128,10 +126,10 @@ function App() {
     <div style={styles.app}>
       <h1>Gasolineras en Alcoi</h1>
       <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStQ0SQ1Bg7mO4toLntO7O812ApmscLk5A4UQ&s"
-        alt="Estación de servicio"
-        style={{ width: '100px', height: '60px' }}
-      />
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStQ0SQ1Bg7mO4toLntO7O812ApmscLk5A4UQ&s"
+          alt="Estación de servicio"
+          style={{ width: '100px', height: '60px' }}
+        />
 
       {loading && <p style={styles.loading}>Cargando...</p>}
       {error && <p style={styles.error}>{error}</p>}
